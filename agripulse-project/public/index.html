@@ -8,434 +8,140 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #38a169;
-            --primary-hover: #2f855a;
-            --alert-color: #c53030;
-            --info-color: #3182ce;
-            --background-start: #fdfcff;
-            --background-end: #f0f4f8;
-            --card-background: #ffffff;
-            --text-primary: #2d3748;
-            --text-secondary: #718096;
-            --border-color: #e2e8f0;
-        }
-
-        body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            background: linear-gradient(to bottom, var(--background-start), var(--background-end));
-            color: var(--text-primary); 
-            margin: 0; 
-            padding: 20px;
-        }
-
-        .container { 
-            max-width: 1200px; 
-            margin: auto; 
-        }
-
-        .main-panel { 
-            text-align: center; 
-            margin-bottom: 40px; 
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .main-panel p {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-        }
-
-        .dashboard { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 20px; 
-        }
-
-        .widget { 
-            background-color: var(--card-background); 
-            padding: 20px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.08); 
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-        }
-        
-        .widget:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
-        }
-        
-        .widget-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .widget-header b {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-left: 8px;
-        }
-
-        .widget p { 
-            line-height: 1.6;
-            margin: 0;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-        }
-
-        .widget.alert {
-            border-left: 5px solid var(--alert-color);
-        }
-        .widget.alert b {
-            color: var(--alert-color);
-        }
-        
-        .widget.user-updated {
-            border-left: 5px solid var(--info-color);
-        }
-        .widget.user-updated b {
-            color: var(--info-color);
-        }
-
-        #briefing-output { 
-            text-align: left; 
-            background-color: #e2e8f0; 
-            padding: 20px; 
-            border-radius: 8px; 
-            margin-top: 20px; 
-            min-height: 100px; 
-            border: 1px solid #cbd5e0;
-            line-height: 1.7;
-            font-family: inherit;
-        }
-
-        #mic-button { 
-            font-size: 24px; 
-            padding: 15px 20px; 
-            cursor: pointer; 
-            border-radius: 50%; 
-            border: none; 
-            background-color: var(--primary-color); 
-            color: white; 
-            transition: background-color 0.3s; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        #mic-button:hover { 
-            background-color: var(--primary-hover); 
-        }
-
-        #mic-button.is-listening { 
-            background-color: var(--alert-color); 
-            animation: pulse 1.5s infinite; 
-        }
-        
-        .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border-left-color: var(--primary-color);
-            animation: spin 1s ease infinite;
-            margin: 20px auto;
-        }
-
-        @keyframes pulse { 
-            0% { box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.7); } 
-            70% { box-shadow: 0 0 0 10px rgba(229, 62, 62, 0); } 
-            100% { box-shadow: 0 0 0 0 rgba(229, 62, 62, 0); } 
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @media (max-width: 600px) {
-            .dashboard {
-                grid-template-columns: 1fr;
-            }
-            h1 { font-size: 2rem; }
-        }
+        /* Your CSS from before - no changes needed */
+        :root { --primary-color: #38a169; --primary-hover: #2f855a; --alert-color: #c53030; --background-start: #fdfcff; --background-end: #f0f4f8; --card-background: #ffffff; --text-primary: #2d3748; --text-secondary: #718096; --border-color: #e2e8f0; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(to bottom, var(--background-start), var(--background-end)); color: var(--text-primary); margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: auto; }
+        .main-panel { text-align: center; margin-bottom: 40px; }
+        h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 8px; }
+        .main-panel p { font-size: 1.125rem; color: var(--text-secondary); }
+        .dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .widget { background-color: var(--card-background); padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.08); border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .widget:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04); }
+        .widget-header { display: flex; align-items: center; margin-bottom: 10px; }
+        .widget-header b { font-weight: 600; font-size: 1.1rem; margin-left: 8px; }
+        .widget p { line-height: 1.6; margin: 0; font-size: 0.95rem; color: var(--text-secondary); }
+        .widget.alert { border-left: 5px solid var(--alert-color); }
+        .widget.alert b { color: var(--alert-color); }
+        #briefing-output { text-align: left; white-space: pre-wrap; background-color: #e2e8f0; padding: 20px; border-radius: 8px; margin-top: 20px; min-height: 100px; border: 1px solid #cbd5e0; line-height: 1.7; font-family: inherit; }
+        #mic-button { font-size: 24px; padding: 15px 20px; cursor: pointer; border-radius: 50%; border: none; background-color: var(--primary-color); color: white; transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        #mic-button:hover { background-color: var(--primary-hover); }
+        #mic-button.is-listening { background-color: var(--alert-color); animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(229, 62, 62, 0); } 100% { box-shadow: 0 0 0 0 rgba(229, 62, 62, 0); } }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="main-panel">
-            <h1>AgriPulse 360 Dashboard</h1>
-            <p>Your complete farm overview and mission control.</p>
-        </div>
-
+        <div class="main-panel"><h1>AgriPulse 360 Dashboard</h1><p>Your complete farm overview and mission control.</p></div>
         <div class="dashboard">
-            <div class="widget" id="farmer-health-widget">
-                <div class="widget-header">❤️<b>Farmer Health</b></div>
-                <p id="farmer-status">Loading...</p>
-            </div>
-            <div class="widget" id="crop-health-widget">
-                <div class="widget-header">🌱<b>Crop Health</b></div>
-                <p id="crop-status">Loading...</p>
-            </div>
-            <div class="widget" id="beesafe-widget">
-                <div class="widget-header">🐝<b>BeeSafe</b></div>
-                <p id="beesafe-status">Loading...</p>
-            </div>
-            <div class="widget" id="jalamittra-widget">
-                <div class="widget-header">💧<b>JalaMittra</b></div>
-                <p id="jalamittra-status">Loading...</p>
-            </div>
-            <div class="widget" id="krishisuraksha-widget">
-                <div class="widget-header">🛡️<b>KrishiSuraksha</b></div>
-                <p id="krishisuraksha-status">Loading...</p>
-            </div>
-            <div class="widget" id="anaajbhav-widget">
-                <div class="widget-header">📈<b>AnaajBhav</b></div>
-                <p id="anaajbhav-status">Loading...</p>
-            </div>
-            <div class="widget" id="temperature-monitor-widget">
-                <div class="widget-header">🌡️<b>Temperature Monitor</b></div>
-                <p id="temperature-status">Loading...</p>
-            </div>
+            <div class="widget" id="farmer-health-widget"><div class="widget-header">❤️<b>Farmer Health</b></div><p id="farmer-status">Loading...</p></div>
+            <div class="widget" id="crop-health-widget"><div class="widget-header">🌱<b>Crop Health</b></div><p id="crop-status">Loading...</p></div>
+            <div class="widget" id="beesafe-widget"><div class="widget-header">🐝<b>BeeSafe</b></div><p id="beesafe-status">Loading...</p></div>
+            <div class="widget" id="jalamittra-widget"><div class="widget-header">💧<b>JalaMittra</b></div><p id="jalamittra-status">Loading...</p></div>
+            <div class="widget" id="krishisuraksha-widget"><div class="widget-header">🛡️<b>KrishiSuraksha</b></div><p id="krishisuraksha-status">Loading...</p></div>
+            <div class="widget" id="anaajbhav-widget"><div class="widget-header">📈<b>AnaajBhav</b></div><p id="anaajbhav-status">Loading...</p></div>
+            <div class="widget" id="temperature-monitor-widget"><div class="widget-header">🌡️<b>Temperature Monitor</b></div><p id="temperature-status">Loading...</p></div>
         </div>
-
-        <div class="main-panel" style="margin-top: 40px;">
-            <h2>KrushiMantra Voice Assistant</h2>
-            <button id="mic-button">🎤</button>
-            <p id="voice-status">Click the mic to ask a question or provide an update (e.g., "My heart rate is high").</p>
-            <h3>AI Supervisor's Report</h3>
-            <div id="briefing-output">
-                <div class="spinner" style="display: none;"></div>
-                <span id="briefing-text">Your report will appear here...</span>
-            </div>
-        </div>
+        <div class="main-panel" style="margin-top: 40px;"><h2>KrushiMantra Voice Assistant</h2><button id="mic-button">🎤</button><p id="voice-status">Click the mic and ask for your morning briefing...</p><h3>AI Supervisor's Report</h3><div id="briefing-output">Your report will appear here...</div></div>
     </div>
 
     <script>
-        let currentFarmStatus = {};
-
         // --- Part 1: Data Simulation ---
-        function getInitialFarmStatus() {
-            let status = {
-                "farmer_health": {"heart_rate": Math.floor(Math.random() * (95 - 70 + 1)) + 70, "status": "Normal"},
-                "crop_health": {"soil_moisture": Math.floor(Math.random() * (65 - 45 + 1)) + 45, "status": "Healthy"},
-                "beesafe": {"hive_status": "Normal", "bee_activity": "High"},
-                "jalamittra": {"water_slot_today": "4 PM - 5 PM"},
-                "krishisuraksha": {"security_alert": "None"},
-                "anaajbhav": {"crop": "Tomato", "price_forecast": "Stable at ₹25/kg"},
-                "temperature_monitor": {"field_temp": Math.floor(Math.random() * (28 - 22 + 1)) + 22, "greenhouse_temp": Math.floor(Math.random() * (30 - 24 + 1)) + 24, "status": "Optimal"}
-            };
-            
-            if (Math.floor(Math.random() * 5) + 1 === 1) { // 1 in 5 chance of an alert scenario
-                status["farmer_health"] = {"heart_rate": 135, "status": "Heat Stress Warning"};
-                status["jalamittra"] = {"water_slot_today": "Cancelled due to canal maintenance"};
-                status["anaajbhav"] = {"crop": "Tomato", "price_forecast": "Trending up 12%"};
-                status["temperature_monitor"] = {"field_temp": Math.floor(Math.random() * (42 - 35 + 1)) + 35, "greenhouse_temp": Math.floor(Math.random() * (45 - 38 + 1)) + 38, "status": "High Temperature Alert"};
-            }
+        function get_current_farm_status() {
+            let status = { "farmer_health": {"heart_rate": Math.floor(Math.random() * 26) + 70, "status": "Normal"}, "crop_health": {"soil_moisture": Math.floor(Math.random() * 21) + 45, "status": "Healthy"}, "beesafe": {"hive_status": "Normal", "bee_activity": "High"}, "jalamittra": {"water_slot_today": "4 PM - 5 PM"}, "krishisuraksha": {"security_alert": "None"}, "anaajbhav": {"crop": "Tomato", "price_forecast": "Stable at ₹25/kg"}, "temperature_monitor": {"field_temp": Math.floor(Math.random() * 7) + 22, "greenhouse_temp": Math.floor(Math.random() * 7) + 24, "status": "Optimal"} };
+            if (Math.floor(Math.random() * 5) + 1 === 1) { status["farmer_health"] = {"heart_rate": 135, "status": "Heat Stress Warning"}; status["jalamittra"] = {"water_slot_today": "Cancelled due to canal maintenance"}; status["anaajbhav"] = {"crop": "Tomato", "price_forecast": "Trending up 12%"}; status["temperature_monitor"] = {"field_temp": Math.floor(Math.random() * 8) + 35, "greenhouse_temp": Math.floor(Math.random() * 8) + 38, "status": "High Temperature Alert"}; }
             return status;
         }
 
-        // --- Part 2: AI Brain Functions (UPDATED) ---
-
-        async function callGemini(prompt) {
-            // This URL points to your new secure backend endpoint
-            const secureApiUrl = '/api/gemini'; 
-
-            try {
-                const response = await fetch(secureApiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    // Send the prompt to your backend
-                    body: JSON.stringify({ prompt: prompt }) 
-                });
-                if (!response.ok) {
-                    const errorBody = await response.json();
-                    console.error("Backend Error Response:", errorBody);
-                    throw new Error(`Backend Error: ${response.status}`);
-                }
-                const result = await response.json();
-                return result.text; // Your backend will return the AI's text directly
-            } catch (error) {
-                console.error("Error fetching from secure backend:", error);
-                throw error;
-            }
-        }
-        
-        async function processFarmerInput(transcript) {
-            const prompt = `
-                Analyze the following farmer's statement: "${transcript}"
-                Determine if the intent is a "question" or a "status_update".
-
-                If it's a status_update, extract the key information and return ONLY a valid JSON object with an "update" key.
-                Examples:
-                - Input: "I feel dizzy and my heart rate is 125" -> Output: {"update": {"farmer_health": {"status": "Dizzy", "heart_rate": 125}}}
-                - Input: "The soil looks very dry in the north field" -> Output: {"update": {"crop_health": {"status": "Dry Soil Observed"}}}
-                - Input: "my temperature is 101" -> Output: {"update": {"farmer_health": {"status": "Feverish"}}}
-
-
-                If it's a question, return ONLY a valid JSON object with a "question" key containing the original transcript.
-                Example:
-                - Input: "what should I focus on today" -> Output: {"question": "what should I focus on today"}
-
-                Your response must be only the JSON object.
-            `;
-
-            try {
-                const resultText = await callGemini(prompt);
-                // Clean the response to ensure it's valid JSON
-                const jsonResponse = resultText.replace(/```json/g, '').replace(/```/g, '').trim();
-                return JSON.parse(jsonResponse);
-            } catch (error) {
-                console.error("Could not process farmer input:", error);
-                return { question: transcript }; // Default to treating it as a question on error
-            }
-        }
-
+        // --- Part 2: AI Brain Function ---
         async function generate_holistic_briefing(farm_status, farmer_query) {
-            const prompt = `
+            const master_prompt = `
                 You are "AgriPulse 360", a friendly and professional AI Farm Supervisor. Your top priority is farmer safety.
-                Synthesize all data from the report below to generate a "Farmer's Morning Briefing". This data may include real-time updates provided by the farmer.
-
+                Synthesize all data from the report below to generate a "Farmer's Morning Briefing". You must connect the dots between different modules and provide a single, prioritized action plan.
                 **Today's Comprehensive Farm Status Report:**
                 ${JSON.stringify(farm_status, null, 2)}
-
-                **Farmer's Specific Question:**
-                "${farmer_query || "No specific question asked. Provide a general briefing."}"
-
+                **Farmer's Voice Query (from KrushiMantra):**
+                "${farmer_query}"
                 **Your Briefing (Generate a concise, structured report with these sections):**
-                1.  **Top Priority Alert:** Start with the single most urgent issue from any module. If none, state "All systems are normal."
+                1.  **Top Priority Alert:** Start with the single most urgent issue from any module (Health, Security, Bees). If none, state "All systems are normal."
                 2.  **Today's Action Plan:** Create a simple checklist of key tasks based on the data.
                 3.  **Market & Ecosystem Intel:** Give a strategic update combining price forecasts and pollinator health.
-                4.  **Answering Your Question:** If a question was asked, address it directly using context from all modules.
+                4.  **Answering Your Question:** Directly address the farmer's voice query using context from all other modules.
             `;
-
+            
             try {
-                return await callGemini(prompt);
-            } catch(error) {
+                const response = await fetch('/api/gemini', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: master_prompt })
+                });
+                if (!response.ok) { throw new Error(`Backend Error: ${response.status}`); }
+                const result = await response.json();
+                return result.text;
+            } catch (error) {
+                console.error("Error fetching from backend:", error);
                 return `AI Analysis temporarily unavailable. Please check the browser console for details.\n\nRaw Data:\n${JSON.stringify(farm_status, null, 2)}`;
             }
         }
 
         // --- Part 3: Dashboard and UI Logic ---
-        function updateWidget(widgetId, textContent, alertCondition, isUserUpdated = false) {
+        function updateWidget(widgetId, textContent, alertCondition) {
             const widget = document.getElementById(widgetId);
             const textElement = widget.querySelector('p');
             textElement.innerText = textContent;
             widget.classList.toggle('alert', alertCondition);
-            widget.classList.toggle('user-updated', isUserUpdated);
         }
 
-        function renderDashboard() {
-            const data = currentFarmStatus;
-            if (!data || !data.farmer_health) return; // Don't render if data isn't ready
-
-            updateWidget('farmer-health-widget', 
-                `Status: ${data.farmer_health.status} | HR: ${data.farmer_health.heart_rate} bpm`, 
-                data.farmer_health.status.toLowerCase().includes('warning') || data.farmer_health.status.toLowerCase().includes('dizzy') || data.farmer_health.status.toLowerCase().includes('feverish'),
-                data.farmer_health.source === 'user'
-            );
-            updateWidget('crop-health-widget', `Status: ${data.crop_health.status} | Moisture: ${data.crop_health.soil_moisture}%`, 
-                data.crop_health.status.toLowerCase().includes('dry'),
-                data.crop_health.source === 'user'
-            );
+        function updateDashboard() {
+            const data = get_current_farm_status();
+            updateWidget('farmer-health-widget', `Status: ${data.farmer_health.status} | HR: ${data.farmer_health.heart_rate} bpm`, data.farmer_health.status.toLowerCase().includes('warning'));
+            updateWidget('crop-health-widget', `Status: ${data.crop_health.status} | Moisture: ${data.crop_health.soil_moisture}%`, false);
             updateWidget('beesafe-widget', `Hive: ${data.beesafe.hive_status} | Activity: ${data.beesafe.bee_activity}`, false);
             updateWidget('jalamittra-widget', `Water Slot: ${data.jalamittra.water_slot_today}`, data.jalamittra.water_slot_today.toLowerCase().includes('cancelled'));
             updateWidget('krishisuraksha-widget', `Alert: ${data.krishisuraksha.security_alert}`, data.krishisuraksha.security_alert.toLowerCase() !== 'none');
             updateWidget('anaajbhav-widget', `Forecast: ${data.anaajbhav.price_forecast}`, false);
-            updateWidget('temperature-monitor-widget', 
-                `${data.temperature_monitor.status} | Field: ${data.temperature_monitor.field_temp}°C | Greenhouse: ${data.temperature_monitor.greenhouse_temp}°C`,
-                data.temperature_monitor.status.toLowerCase().includes('alert')
-            );
-        }
-        
-        function refreshData() {
-            const simulatedData = getInitialFarmStatus();
-            // Only update data that wasn't provided by the user
-            for (const key in simulatedData) {
-                if (!currentFarmStatus[key] || currentFarmStatus[key].source !== 'user') {
-                    currentFarmStatus[key] = simulatedData[key];
-                }
-            }
-            renderDashboard();
+            updateWidget('temperature-monitor-widget', `${data.temperature_monitor.status} | Field: ${data.temperature_monitor.field_temp}°C | Greenhouse: ${data.temperature_monitor.greenhouse_temp}°C`, data.temperature_monitor.status.toLowerCase().includes('alert'));
         }
 
+        setInterval(updateDashboard, 5000);
+        updateDashboard();
 
-        // --- Initialization and Event Listeners ---
-        document.addEventListener('DOMContentLoaded', () => {
-            currentFarmStatus = getInitialFarmStatus();
-            renderDashboard();
-            setInterval(refreshData, 5000);
+        const micButton = document.getElementById('mic-button');
+        const voiceStatus = document.getElementById('voice-status');
+        const briefingOutput = document.getElementById('briefing-output');
 
-            const micButton = document.getElementById('mic-button');
-            const voiceStatus = document.getElementById('voice-status');
-            
-            micButton.onclick = () => {
-                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-                if (!SpeechRecognition) {
-                    alert("Sorry, your browser doesn't support Voice Recognition.");
-                    return;
-                }
-                const recognition = new SpeechRecognition();
-                recognition.interimResults = false;
+        micButton.onclick = () => {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SpeechRecognition) { alert("Sorry, your browser doesn't support Voice Recognition."); return; }
+            const recognition = new SpeechRecognition();
+            recognition.interimResults = false;
 
-                recognition.onstart = () => {
-                    micButton.classList.add('is-listening');
-                    voiceStatus.innerText = "Listening...";
-                };
-
-                recognition.onresult = async (event) => {
-                    const transcript = event.results[0][0].transcript;
-                    voiceStatus.innerText = `Processing: "${transcript}"...`;
-                    
-                    const briefingOutput = document.getElementById('briefing-output');
-                    const briefingText = document.getElementById('briefing-text');
-                    const spinner = briefingOutput.querySelector('.spinner');
-                    
-                    spinner.style.display = 'block';
-                    briefingText.innerText = 'Analyzing your input...';
-
-                    const intentResult = await processFarmerInput(transcript);
-
-                    let farmerQuery = "";
-
-                    if (intentResult.update) {
-                        voiceStatus.innerText = "Status updated! Generating new report...";
-                        // Merge the update into the current status
-                        for (const category in intentResult.update) {
-                            if (currentFarmStatus[category]) {
-                                Object.assign(currentFarmStatus[category], intentResult.update[category]);
-                                currentFarmStatus[category].source = 'user'; // Mark as user-provided
-                            }
-                        }
-                        renderDashboard(); // Immediately show the updated data
-                    } else if (intentResult.question) {
-                        voiceStatus.innerText = `Getting your briefing for: "${transcript}"...`;
-                        farmerQuery = intentResult.question;
-                    }
-
-                    briefingText.innerText = 'Generating your briefing...';
-                    const briefing = await generate_holistic_briefing(currentFarmStatus, farmerQuery);
-                    
-                    spinner.style.display = 'none';
-                    briefingText.innerText = briefing;
-                };
-
-                recognition.onerror = (event) => {
-                    console.error('Speech recognition error:', event.error);
-                    voiceStatus.innerText = `Error listening: ${event.error}. Please try again.`;
-                };
-
-                recognition.onend = () => {
-                    micButton.classList.remove('is-listening');
-                };
-                
-                recognition.start();
+            recognition.onstart = () => {
+                micButton.classList.add('is-listening');
+                voiceStatus.innerText = "Listening...";
             };
-        });
+
+            recognition.onresult = async (event) => {
+                const transcript = event.results[0][0].transcript;
+                voiceStatus.innerText = `You said: "${transcript}" | Getting your briefing...`;
+                briefingOutput.innerText = 'Analyzing...';
+                
+                const currentStatus = get_current_farm_status();
+                const briefing = await generate_holistic_briefing(currentStatus, transcript);
+                briefingOutput.innerText = briefing;
+            };
+
+            recognition.onerror = (event) => {
+                console.error('Speech recognition error:', event.error);
+                voiceStatus.innerText = `Error listening: ${event.error}. Please try again.`;
+            };
+
+            recognition.onend = () => {
+                micButton.classList.remove('is-listening');
+            };
+            
+            recognition.start();
+        };
     </script>
 </body>
 </html>
