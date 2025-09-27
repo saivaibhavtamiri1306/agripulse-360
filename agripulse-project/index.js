@@ -23,7 +23,7 @@ app.post('/api/gemini', async (req, res) => {
         return res.status(400).json({ error: 'Prompt is required.' });
     }
 
-    const model = 'gemini-1.5-flash';
+    const model = 'gemini-pro';
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`;
     const payload = { contents: [{ parts: [{ text: prompt }] }] };
 
@@ -65,3 +65,4 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
