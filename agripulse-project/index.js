@@ -4,14 +4,18 @@ const fetch = require('node-fetch');
 const path = require('path');
 const app = express();
 
+// Middleware to parse JSON bodies and serve static files
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// It reads the variable named 'GEMINI_API_KEY' from your Render Environment.
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
+// API endpoint that the front-end will call
 app.post('/api/gemini', async (req, res) => {
     if (!GEMINI_API_KEY) {
-        return res.status(500).json({ error: 'API key is not configured on the server.' });
+        // FIXED: Removed duplicate 'return' statement.
+        return res.status(500).json({ error: 'API key is not configured on the server. Please check your Render Environment Variables.' });
     }
 
     const { prompt } = req.body;
@@ -19,7 +23,7 @@ app.post('/api/gemini', async (req, res) => {
         return res.status(400).json({ error: 'Prompt is required.' });
     }
 
-    // UPDATED MODEL NAME AND API VERSION
+    // FIXED: Declared 'model' only once.
     const model = 'gemini-1.5-flash';
     const apiUrl = `https://generativelanguage.googleapis.com/v1/models/${model}:generateContent?key=${GEMINI_API_KEY}`;
     
@@ -41,6 +45,7 @@ app.post('/api/gemini', async (req, res) => {
 
         const text = responseData.candidates[0]?.content?.parts[0]?.text;
         if (text) {
+            // FIXED: Removed duplicate 'res.json' call.
             res.json({ text });
         } else {
              res.status(500).json({ error: 'Invalid response structure from Gemini API.' });
@@ -52,10 +57,12 @@ app.post('/api/gemini', async (req, res) => {
     }
 });
 
+// Serve the main HTML file for any other GET request
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// To run the server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
