@@ -8,14 +8,14 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// IMPORTANT: Store your API key as a Secret environment variable
-// DO NOT write your key here.
-const GEMINI_API_KEY = process.env.AIzaSyBq38nw6KokPxTev7dRBZXMRpS02bHXLOk;
+// THIS IS THE CORRECT, SECURE LINE.
+// It reads the variable named 'GEMINI_API_KEY' from your Render Environment.
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 // API endpoint that the front-end will call
 app.post('/api/gemini', async (req, res) => {
     if (!GEMINI_API_KEY) {
-        return res.status(500).json({ error: 'API key is not configured on the server.' });
+        return res.status(500).json({ error: 'API key is not configured on the server. Please check your Render Environment Variables.' });
     }
 
     const { prompt } = req.body;
