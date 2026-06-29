@@ -1,10 +1,6 @@
 <div align="center">
 
-<!-- 
-IMPORTANT: Create a banner image (1200x400px) with your app's logo and UI. 
-Upload it to your repo and replace this link! 
--->
-<img src="https://via.placeholder.com/1200x300/1a1a1a/4ade80?text=AgriPulse+360+-+Holistic+Farm+Ecosystem" alt="AgriPulse 360 Banner" width="100%">
+<img src="https://placehold.co/1200x300/1a1a1a/4ade80?text=AgriPulse+360+-+Holistic+Farm+Ecosystem" alt="AgriPulse 360 Banner" width="100%">
 
 # 🌱 AgriPulse 360
 **The Universal, AI-Powered Ecosystem for Farm & Farmer Intelligence**
@@ -21,9 +17,7 @@ Upload it to your repo and replace this link!
 
 ## 📖 The Problem We Are Solving
 
-Modern agriculture faces a fragmented approach: data exists for crops, weather, and markets, but is rarely synthesized into an actionable format. More importantly, **the health and well-being of the farmer are entirely left out of the equation.** 
-
-**AgriPulse 360** changes this by creating a unified command center. It leverages artificial intelligence to analyze environmental conditions, monitor crop threats, and sync with the farmer’s health—delivering actionable insights before crises occur.
+Modern agriculture faces a fragmented approach: data exists for crops, weather, and markets, but is rarely synthesized into an actionable format. More importantly, **the health and well-being of the farmer are entirely left out of the equation.** **AgriPulse 360** changes this by creating a unified command center. It leverages artificial intelligence to analyze environmental conditions, monitor crop threats, and sync with the farmer’s health—delivering actionable insights before crises occur.
 
 ---
 
@@ -53,9 +47,9 @@ Modern agriculture faces a fragmented approach: data exists for crops, weather, 
   <code><img height="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="NodeJS"></code>
 </div>
 
-*   **Frontend Interface:** React.js / Next.js with Tailwind CSS for a highly responsive, modern UI.
-*   **Backend & Database:** Firebase (Authentication, Firestore, Storage) & Node.js for real-time data syncing.
-*   **Artificial Intelligence:** Gemini API & OpenAI API powering the voice synthesis, predictive market modeling, and computer vision for crop diagnostics.
+* **Frontend Interface:** React.js / Next.js with Tailwind CSS for a highly responsive, modern UI.
+* **Backend & Database:** Firebase (Authentication, Firestore, Storage) & Node.js for real-time data syncing.
+* **Artificial Intelligence:** Gemini API & OpenAI API powering the voice synthesis, predictive market modeling, and computer vision for crop diagnostics.
 
 ---
 
